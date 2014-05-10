@@ -1,0 +1,6 @@
+AR filter behavioral D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd sub00/vhpl03 1399757028
+AR synchronizer behavioral D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd sub00/vhpl01 1399757026
+EN synchronizer NULL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd sub00/vhpl00 1399757025
+EN receiver NULL D:/PROGRAMOWANIE/Github/rstryhard/reciever.vhd sub00/vhpl04 1399757029
+EN filter NULL D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd sub00/vhpl02 1399757027
+AR receiver behavioral D:/PROGRAMOWANIE/Github/rstryhard/reciever.vhd sub00/vhpl05 1399757030
