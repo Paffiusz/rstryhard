@@ -1,0 +1,18 @@
+V3 11
+FL D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd 2014/04/05.13:57:43 P.20131013
+EN work/filter 1399757027 FL D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/filter/Behavioral 1399757028 \
+      FL D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd EN work/filter 1399757027
+FL D:/PROGRAMOWANIE/Github/rstryhard/reciever.vhd 2014/05/10.23:22:06 P.20131013
+EN work/Receiver 1399757029 FL D:/PROGRAMOWANIE/Github/rstryhard/reciever.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/Receiver/Behavioral 1399757030 \
+      FL D:/PROGRAMOWANIE/Github/rstryhard/reciever.vhd EN work/Receiver 1399757029 \
+      CP synchronizer CP filter
+FL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd 2014/04/05.14:15:13 P.20131013
+EN work/synchronizer 1399757025 \
+      FL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/synchronizer/Behavioral 1399757026 \
+      FL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd EN work/synchronizer 1399757025
