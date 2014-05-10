@@ -1,0 +1,2 @@
+vhdl isim_temp "reciever.vhd"
+vhdl isim_temp "testinput.vhd"

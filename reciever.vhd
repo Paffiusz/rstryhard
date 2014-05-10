@@ -14,7 +14,7 @@ architecture Behavioral of reciever is
 
 signal c_clk: integer:=0;
 signal rs_word : std_logic_vector(7 downto 0):=(others=>'0');
-signal bit_count : integer:=0;
+signal bit_count : integer range 0 to 9 :=0;
 
 type state is (waiting,input,push);
 
