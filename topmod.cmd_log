@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Dawid/Szkolnictwo/ISP/rstryhard/topmod.xst" -ofn "D:/Dawid/Szkolnictwo/ISP/rstryhard/topmod.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 topmod.ngc topmod.ngd  

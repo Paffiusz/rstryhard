@@ -1,0 +1,40 @@
+Release 14.2 ngdbuild P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: d:\Programy\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 topmod.ngc
+topmod.ngd
+
+Reading NGO file "D:/Dawid/Szkolnictwo/ISP/rstryhard/topmod.ngc" ...
+Loading design module "D:\Dawid\Szkolnictwo\ISP\rstryhard/topmod.ngc"...
+WARNING:NgdBuild:578 - Design contains no instances.
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+ERROR:NgdBuild:605 - logical root block 'topmod' with type 'topmod' is
+   unexpanded. Symbol 'topmod' is not supported in target 'spartan3e'.
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     1
+  Number of warnings:   1
+
+Total memory usage is 150748 kilobytes
+
+Total REAL time to NGDBUILD completion:  3 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "topmod.bld"...

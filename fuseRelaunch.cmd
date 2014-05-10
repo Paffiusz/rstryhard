@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/Dawid/Szkolnictwo/ISP/rstryhard/testinput_isim_beh.exe" -prj "D:/Dawid/Szkolnictwo/ISP/rstryhard/testinput_beh.prj" "work.testinput" 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 V3 11
 FL D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd 2014/04/05.13:57:43 P.20131013
 EN work/filter 1399757027 FL D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd \
@@ -16,3 +17,11 @@ EN work/synchronizer 1399757025 \
       PB ieee/std_logic_1164 1381692176
 AR work/synchronizer/Behavioral 1399757026 \
       FL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd EN work/synchronizer 1399757025
+=======
+V3 3
+FL D:/Dawid/Szkolnictwo/ISP/rstryhard/topmod.vhd 2014/05/10.20:56:34 P.28xd
+EN work/topmod 1399754729 FL D:/Dawid/Szkolnictwo/ISP/rstryhard/topmod.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/topmod/Behavioral 1399754730 \
+      FL D:/Dawid/Szkolnictwo/ISP/rstryhard/topmod.vhd EN work/topmod 1399754729
+>>>>>>> 024b59ce8b3d8ad52c6f16f222d79cc99ae5582c
