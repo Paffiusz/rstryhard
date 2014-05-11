@@ -58,10 +58,10 @@ ARCHITECTURE behavior OF ReceiverTB IS
  	--Outputs
    signal Data : std_logic_vector(7 downto 0):=(others=>'0');
    signal Data_Ready : std_logic:= '0';
-	signal WORD : std_logic_vector(7 downto 0):="11100110";
+	signal WORD : std_logic_vector(7 downto 0):="01100110";
 
    -- Clock period definitions
-   constant clk_i_period : time := 10 ns;
+   constant clk_i_period : time := 20 ns;
  
 BEGIN
  
