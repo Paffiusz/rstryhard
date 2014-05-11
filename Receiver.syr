@@ -1,0 +1,450 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: Receiver.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Receiver.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Receiver"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Receiver
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd" in Library work.
+Architecture behavioral of Entity synchronizer is up to date.
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd" in Library work.
+Architecture behavioral of Entity filter is up to date.
+Compiling vhdl file "D:/PROGRAMOWANIE/Github/rstryhard/reciever.vhd" in Library work.
+Entity <receiver> compiled.
+Entity <receiver> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Receiver> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <synchronizer> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <filter> in library <work> (architecture <behavioral>) with generics.
+	counter_size = 8
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <Receiver> in library <work> (Architecture <behavioral>).
+Entity <Receiver> analyzed. Unit <Receiver> generated.
+
+Analyzing Entity <synchronizer> in library <work> (Architecture <behavioral>).
+Entity <synchronizer> analyzed. Unit <synchronizer> generated.
+
+Analyzing generic Entity <filter> in library <work> (Architecture <behavioral>).
+	counter_size = 8
+Entity <filter> analyzed. Unit <filter> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <synchronizer>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd".
+    Found 1-bit register for signal <sync_sig_o>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <synchronizer> synthesized.
+
+
+Synthesizing Unit <filter>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd".
+    Found 1-bit register for signal <Output>.
+    Found 9-bit up counter for signal <counter>.
+    Found 1-bit xor2 for signal <counter_reset>.
+    Found 2-bit register for signal <flipflop>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   3 D-type flip-flop(s).
+Unit <filter> synthesized.
+
+
+Synthesizing Unit <Receiver>.
+    Related source file is "D:/PROGRAMOWANIE/Github/rstryhard/reciever.vhd".
+WARNING:Xst:646 - Signal <msg<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Using one-hot encoding for signal <unit_state>.
+    Using one-hot encoding for signal <unit_state$mux0000>.
+    Found 8-bit register for signal <Data>.
+    Found 1-bit register for signal <Data_Ready>.
+    Found 1-bit register for signal <LOG>.
+    Found 4-bit register for signal <bit_counter>.
+    Found 4-bit adder for signal <bit_counter$addsub0000> created at line 88.
+    Found 14-bit register for signal <counter>.
+    Found 14-bit adder for signal <counter$addsub0000> created at line 91.
+    Found 13-bit register for signal <hcounter>.
+    Found 13-bit adder for signal <hcounter$addsub0000> created at line 81.
+    Found 10-bit register for signal <msg>.
+    Found 4-bit register for signal <unit_state>.
+    Summary:
+	inferred  55 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+Unit <Receiver> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 13-bit adder                                          : 1
+ 14-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 12
+ 1-bit register                                        : 6
+ 10-bit register                                       : 1
+ 13-bit register                                       : 1
+ 14-bit register                                       : 1
+ 4-bit register                                        : 2
+ 8-bit register                                        : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <unit_state_0> of sequential type is unconnected in block <Receiver>.
+WARNING:Xst:2677 - Node <msg_0> of sequential type is unconnected in block <Receiver>.
+WARNING:Xst:2677 - Node <unit_state_0> of sequential type is unconnected in block <Receiver>.
+WARNING:Xst:2677 - Node <msg_0> of sequential type is unconnected in block <Receiver>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 13-bit adder                                          : 1
+ 14-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 57
+ Flip-Flops                                            : 57
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Receiver> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Receiver, actual ratio is 1.
+FlipFlop ftr_rxd/Output has been replicated 1 time(s)
+FlipFlop unit_state_2 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <Receiver> :
+	Found 2-bit shift register for signal <ftr_rxd/flipflop_0>.
+Unit <Receiver> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 66
+ Flip-Flops                                            : 66
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Receiver.ngr
+Top Level Output File Name         : Receiver
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 220
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 8
+#      LUT2                        : 18
+#      LUT3                        : 35
+#      LUT3_L                      : 5
+#      LUT4                        : 56
+#      LUT4_D                      : 8
+#      LUT4_L                      : 1
+#      MUXCY                       : 33
+#      MUXF5                       : 15
+#      VCC                         : 1
+#      XORCY                       : 36
+# FlipFlops/Latches                : 67
+#      FD                          : 32
+#      FDE                         : 24
+#      FDRE                        : 10
+#      FDS                         : 1
+# Shift Registers                  : 1
+#      SRL16                       : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 1
+#      OBUF                        : 10
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       72  out of   4656     1%  
+ Number of Slice Flip Flops:             67  out of   9312     0%  
+ Number of 4 input LUTs:                135  out of   9312     1%  
+    Number used as logic:               134
+    Number used as Shift registers:       1
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    232     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_i                              | BUFGP                  | 68    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 8.060ns (Maximum Frequency: 124.069MHz)
+   Minimum input arrival time before clock: 2.059ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_i'
+  Clock period: 8.060ns (frequency: 124.069MHz)
+  Total number of paths / destination ports: 2950 / 111
+-------------------------------------------------------------------------
+Delay:               8.060ns (Levels of Logic = 5)
+  Source:            ftr_rxd/Output_1 (FF)
+  Destination:       msg_1 (FF)
+  Source Clock:      clk_i rising
+  Destination Clock: clk_i rising
+
+  Data Path: ftr_rxd/Output_1 to msg_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.591   0.595  ftr_rxd/Output_1 (ftr_rxd/Output_1)
+     LUT2:I0->O           18   0.704   1.072  Data_Ready_and00001 (Data_Ready_and0000)
+     LUT4:I3->O            2   0.704   0.451  unit_state_cmp_eq000040 (unit_state_cmp_eq000040)
+     LUT4:I3->O            5   0.704   0.668  unit_state_cmp_eq000054_1 (unit_state_cmp_eq000054)
+     LUT4:I2->O            9   0.704   0.855  msg_mux0000<1>21 (N3)
+     LUT4:I2->O            1   0.704   0.000  msg_mux0000<9>1 (msg_mux0000<9>)
+     FD:D                      0.308          msg_9
+    ----------------------------------------
+    Total                      8.060ns (4.419ns logic, 3.641ns route)
+                                       (54.8% logic, 45.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_i'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.059ns (Levels of Logic = 1)
+  Source:            RxD (PAD)
+  Destination:       ftr_rxd/Mshreg_flipflop_0 (FF)
+  Destination Clock: clk_i rising
+
+  Data Path: RxD to ftr_rxd/Mshreg_flipflop_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  RxD_IBUF (RxD_IBUF)
+     SRL16:D                   0.421          ftr_rxd/Mshreg_flipflop_0
+    ----------------------------------------
+    Total                      2.059ns (1.639ns logic, 0.420ns route)
+                                       (79.6% logic, 20.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_i'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            LOG (FF)
+  Destination:       LOG (PAD)
+  Source Clock:      clk_i rising
+
+  Data Path: LOG to LOG
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.591   0.447  LOG (LOG_OBUF)
+     OBUF:I->O                 3.272          LOG_OBUF (LOG)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.93 secs
+ 
+--> 
+
+Total memory usage is 265384 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

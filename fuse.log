@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Running: d:\Programy\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o D:/Dawid/Szkolnictwo/ISP/rstryhard/testinput_isim_beh.exe -prj D:/Dawid/Szkolnictwo/ISP/rstryhard/testinput_beh.prj work.testinput 
 ISim P.28xd (signature 0xa0883be4)
 Number of CPUs detected in this system: 4
@@ -18,3 +19,30 @@ Compiled 6 VHDL Units
 Built simulation executable D:/Dawid/Szkolnictwo/ISP/rstryhard/testinput_isim_beh.exe
 Fuse Memory Usage: 35176 KB
 Fuse CPU Usage: 389 ms
+=======
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB_isim_beh.exe" -prj "D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB_beh.prj" "work.ReceiverTB" 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd" into library work
+Parsing VHDL file "D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd" into library work
+Parsing VHDL file "D:/PROGRAMOWANIE/Github/rstryhard/reciever.vhd" into library work
+Parsing VHDL file "D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity synchronizer [synchronizer_default]
+Compiling architecture behavioral of entity filter [\filter(8)\]
+Compiling architecture behavioral of entity Receiver [receiver_default]
+Compiling architecture behavior of entity receivertb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 11 VHDL Units
+Built simulation executable D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB_isim_beh.exe
+Fuse Memory Usage: 37128 KB
+Fuse CPU Usage: 904 ms
+>>>>>>> Completed Reciver As u Wish

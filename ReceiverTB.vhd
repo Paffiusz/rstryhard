@@ -58,7 +58,7 @@ ARCHITECTURE behavior OF ReceiverTB IS
  	--Outputs
    signal Data : std_logic_vector(7 downto 0):=(others=>'0');
    signal Data_Ready : std_logic:= '0';
-	signal WORD : std_logic_vector(7 downto 0):="10101010";
+	signal WORD : std_logic_vector(7 downto 0):="11100110";
 
    -- Clock period definitions
    constant clk_i_period : time := 10 ns;
@@ -88,23 +88,23 @@ process
 begin
 	wait for 1 ms;
 	RxD <='0';
-	wait for 0.1 ms;
-	RxD <=WORD(7);
-	wait for 0.1 ms;
-	RxD <=WORD(6);
-	wait for 0.1 ms;
-	RxD <=WORD(5);
-	wait for 0.1 ms;
-	RxD <=WORD(4);
-	wait for 0.1 ms;
-	RxD <=WORD(3);
-	wait for 0.1 ms;
-	RxD <=WORD(2);
-	wait for 0.1 ms;
-	RxD <=WORD(1);
-	wait for 0.1 ms;
+	wait for 0.102 ms;
 	RxD <=WORD(0);
-	wait for 0.1 ms;
+	wait for 0.102 ms;
+	RxD <=WORD(1);
+	wait for 0.102 ms;
+	RxD <=WORD(2);
+	wait for 0.102 ms;
+	RxD <=WORD(3);
+	wait for 0.102 ms;
+	RxD <=WORD(4);
+	wait for 0.102 ms;
+	RxD <=WORD(5);
+	wait for 0.102 ms;
+	RxD <=WORD(6);
+	wait for 0.102 ms;
+	RxD <=WORD(7);
+	wait for 0.102 ms;
 	RxD <='1';
 	wait;
 end process;
