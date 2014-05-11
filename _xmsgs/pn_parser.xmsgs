@@ -8,7 +8,11 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB.vhd&quot; into library work</arg>
+=======
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/PROGRAMOWANIE/Github/rstryhard/debounce.vhd&quot; into library work</arg>
+>>>>>>> codes
 </msg>
 
 </messages>

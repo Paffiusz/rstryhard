@@ -2,6 +2,7 @@ Command line:
    ReceiverTB_isim_beh.exe
      -simmode  gui
      -simrunnum  0
+<<<<<<< HEAD
      -socket  2344
 
 Sun May 11 12:42:23 2014
@@ -27,3 +28,11 @@ Total Line Count : 59
 
 Sun May 11 12:43:07 2014
 
+=======
+     -socket  2746
+
+Sun May 11 13:05:34 2014
+
+
+ Elaboration Time: 0.0468 sec
+>>>>>>> codes

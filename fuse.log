@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Running: d:\Programy\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o D:/Dawid/Szkolnictwo/ISP/rstryhard/testinput_isim_beh.exe -prj D:/Dawid/Szkolnictwo/ISP/rstryhard/testinput_beh.prj work.testinput 
 ISim P.28xd (signature 0xa0883be4)
 Number of CPUs detected in this system: 4
@@ -20,6 +21,8 @@ Built simulation executable D:/Dawid/Szkolnictwo/ISP/rstryhard/testinput_isim_be
 Fuse Memory Usage: 35176 KB
 Fuse CPU Usage: 389 ms
 =======
+=======
+>>>>>>> codes
 Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB_isim_beh.exe" -prj "D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB_beh.prj" "work.ReceiverTB" 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
@@ -43,6 +46,11 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 11 VHDL Units
 Built simulation executable D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB_isim_beh.exe
+<<<<<<< HEAD
 Fuse Memory Usage: 37128 KB
 Fuse CPU Usage: 904 ms
 >>>>>>> Completed Reciver As u Wish
+=======
+Fuse Memory Usage: 37244 KB
+Fuse CPU Usage: 889 ms
+>>>>>>> codes

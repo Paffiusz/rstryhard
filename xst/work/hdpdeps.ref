@@ -16,6 +16,7 @@ EN work/synchronizer 1399804072 \
       FL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd \
       PB ieee/std_logic_1164 1381692176
 <<<<<<< HEAD
+<<<<<<< HEAD
 AR work/synchronizer/Behavioral 1399757026 \
       FL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd EN work/synchronizer 1399757025
 =======
@@ -30,3 +31,7 @@ AR work/topmod/Behavioral 1399754730 \
 AR work/synchronizer/Behavioral 1399804073 \
       FL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd EN work/synchronizer 1399804072
 >>>>>>> Completed Reciver As u Wish
+=======
+AR work/synchronizer/Behavioral 1399804073 \
+      FL D:/PROGRAMOWANIE/Github/rstryhard/synchronizer.vhd EN work/synchronizer 1399804072
+>>>>>>> codes

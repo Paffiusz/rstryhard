@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
+<<<<<<< HEAD
   <DateModified>2014-05-11T12:27:49</DateModified>
   <ModuleName>Receiver</ModuleName>
   <SummaryTimeStamp>2014-05-11T12:07:19</SummaryTimeStamp>
   <SavedFilePath>D:/PROGRAMOWANIE/Github/rstryhard/iseconfig/Receiver.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/PROGRAMOWANIE/Github/rstryhard</ImplementationReportsDirectory>
+=======
+  <DateModified>2014-05-11T13:00:12</DateModified>
+  <ModuleName>Receiver</ModuleName>
+  <SummaryTimeStamp>2014-05-11T12:07:19</SummaryTimeStamp>
+  <SavedFilePath>D:/PROGRAMOWANIE/Github/rstryhard/iseconfig/Receiver.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/PROGRAMOWANIE/Github/rstryhard\</ImplementationReportsDirectory>
+>>>>>>> codes
   <DateInitialized>2014-05-11T11:47:55</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
