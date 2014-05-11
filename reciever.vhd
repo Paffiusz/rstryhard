@@ -74,10 +74,14 @@ BEGIN
 
 		if unit_state = Waiting then
 			if hcounter = (clock_freq/rs232_freq) then
-				msg <= snf_RxD & msg(9 downto 1);
-				unit_state:= Reciving;
-				bit_counter:= 1;
-				LOG <= NOT LOG;
+				if snf_RxD = '0' then
+					msg <= snf_RxD & msg(9 downto 1);
+					unit_state:= Reciving;
+					bit_counter:= 1;
+					LOG <= NOT LOG;
+				else
+					unit_state:= Init;
+				end if;
 			elsif hcounter /= (clock_freq/rs232_freq) then
 				hcounter:= hcounter +1;
 			end if;
