@@ -64,7 +64,7 @@ if rising_edge(clk_i) then
 	bit_counter:= 0;
 	Data_Ready <= '0';
 
-	elsif unit_state = Recive then
+	elsif unit_state = Recived then
 	Data <= msg(7 downto 0);
 	Data_Ready <= '1';
 	if counter = 5208 then
