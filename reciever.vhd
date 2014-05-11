@@ -74,7 +74,7 @@ BEGIN
 		--Odbieranie wiadomosci
 
 		if unit_state = Waiting then
-			if hcounter = (clock_freq/rs232_freq) then
+			if hcounter = (clock_freq/rs232_freq)/2 then
 <<<<<<< HEAD
 				msg <= snf_RxD & msg(9 downto 1);
 				unit_state:= Reciving;
@@ -90,17 +90,17 @@ BEGIN
 					unit_state:= Init;
 				end if;
 >>>>>>> codes
-			elsif hcounter /= (clock_freq/rs232_freq) then
+			elsif hcounter /= (clock_freq/rs232_freq)/2 then
 				hcounter:= hcounter +1;
 			end if;
 		
 		elsif unit_state = Reciving then
-			if counter = 2*(clock_freq/rs232_freq) then
+			if counter = (clock_freq/rs232_freq) then
 				msg <= snf_RxD & msg(9 downto 1);
 				counter := 0;
 				bit_counter := bit_counter + 1;
 				LOG <= NOT LOG;
-			elsif counter /= 2*(clock_freq/rs232_freq) then
+			elsif counter /= (clock_freq/rs232_freq) then
 				counter := counter + 1;
 			end if;
 			
