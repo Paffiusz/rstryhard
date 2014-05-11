@@ -31,13 +31,13 @@ END COMPONENT;
 
 --------------------------------------------------
 
-constant clock_freq : integer := 50_000_000;	--in Hz
-constant rs232_freq : integer := 9_600;		--in Hz
+constant clock_freq : integer := 50000000;	--in Hz
+constant rs232_freq : integer := 9600;		--in Hz
 
-signal sync_RxD : STD_LOGIC:= '0';
-signal snf_RxD : STD_LOGIC:= '0';
+signal sync_RxD : STD_LOGIC:= '1';
+signal snf_RxD : STD_LOGIC:= '1';
 signal msg : STD_LOGIC_VECTOR(9 downto 0):=(others=>'0');
-type state is (Waiting, Reciving, Recived);
+type state is (Init, Waiting, Reciving, Recived);
 
 BEGIN
 
@@ -51,16 +51,18 @@ BEGIN
 	process(clk_i)
 	
 	variable counter : integer range 0 to 2*clock_freq/rs232_freq:= 0;
+	variable hcounter : integer range 0 to clock_freq/rs232_freq:= 0;
 	variable bit_counter : integer range 0 to 10:= 0;
-	variable unit_state : state:= Waiting;
+	variable unit_state : state:= Init;
 	
 	begin
 		if rising_edge(clk_i) then
 		
 		-- Obsluga stanu recivera
-			if unit_state /= Reciving and snf_RxD = '0' then
-				unit_state:= Reciving;
+			if (unit_state /= Reciving and unit_state /= Waiting) and snf_RxD = '0' then
+				unit_state:= Waiting;
 				counter:= 0;
+				hcounter:= 0;
 				bit_counter:= 0;
 				Data_Ready <= '0';
 			elsif unit_state = Recived then
@@ -70,13 +72,23 @@ BEGIN
 		
 		--Odbieranie wiadomosci
 
-		if unit_state = Reciving then
+		if unit_state = Waiting then
+			if hcounter = (clock_freq/rs232_freq) then
+				msg <= snf_RxD & msg(9 downto 1);
+				unit_state:= Reciving;
+				bit_counter:= 1;
+				LOG <= NOT LOG;
+			elsif hcounter /= (clock_freq/rs232_freq) then
+				hcounter:= hcounter +1;
+			end if;
+		
+		elsif unit_state = Reciving then
 			if counter = 2*(clock_freq/rs232_freq) then
 				msg <= snf_RxD & msg(9 downto 1);
 				counter := 0;
 				bit_counter := bit_counter + 1;
 				LOG <= NOT LOG;
-			elsif( counter /= 2*(clock_freq/rs232_freq)) then
+			elsif counter /= 2*(clock_freq/rs232_freq) then
 				counter := counter + 1;
 			end if;
 			

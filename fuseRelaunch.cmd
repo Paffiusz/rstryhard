@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB_isim_beh.exe" -prj "D:/PROGRAMOWANIE/Github/rstryhard/ReceiverTB_beh.prj" "work.ReceiverTB" 
