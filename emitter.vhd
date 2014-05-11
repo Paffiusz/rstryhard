@@ -40,7 +40,7 @@ begin
 		elsif unit_state = Recieving then
 			if Data_ready = '1' then
 				temp(0)<='0';
-				temp(8 downto 1)<=Data;
+				temp(8 downto 1)<=Data(7 downto 0);
 				temp(9)<='1';
 				unit_state:= Sending;
 			end if;
