@@ -1,41 +1,70 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    20:56:34 05/10/2014 
--- Design Name: 
--- Module Name:    topmod - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+entity THE_BASS_MODULE is
+	port(
+		clk_i: in std_logic;
+		RXD_i: in std_logic;
+		TXD_o: out std_logic
+	);
+end THE_BASS_MODULE;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+architecture Behavioral of THE_BASS_MODULE is
 
-entity topmod is
-end topmod;
+component Receiver is
+	port(
+		clk_i : in STD_LOGIC;
+		RxD : in STD_LOGIC;
+		Data : out STD_LOGIC_VECTOR(7 downto 0);
+		Data_Ready : out STD_LOGIC
+	);
+end component;
 
-architecture Behavioral of topmod is
+component transmitter is
+	port(
+		Data: in std_logic_vector(7 downto 0);
+		clk_i: in std_logic;
+		Data_ready: in std_logic;
+		TXD_o: out std_logic
+	);
+end component;
+
+component adder is
+	port(
+		clk_i : in std_logic;
+		Data_ready_i: in std_logic;
+		Data_ready_o: out std_logic;
+		sig_i : in std_logic_vector(7 downto 0);
+		added_sig_o : out std_logic_vector(7 downto 0)
+	);
+end component;
+
+signal d_ready_r : std_logic:='0';
+signal d_ready_t : std_logic:='0';
+signal data_r : std_logic_vector(7 downto 0):=(others=>'0');
+signal data_added : std_logic_vector(7 downto 0 ):=(others=>'0');
+
 
 begin
-
-
+	getit: Receiver	port map(
+								clk_i=>clk_i,
+								RxD=>RXD_i,
+								Data=>data_r,
+								Data_Ready=>d_ready_r
+							);
+	
+	addit: adder		port map(
+								clk_i=>clk_i,
+								Data_ready_i=>d_ready_r,
+								Data_ready_o=>d_ready_t,
+								sig_i=>data_r,
+								added_sig_o=>data_added
+							);
+	sendit: transmitter		port map(
+										Data=>data_added,
+										clk_i=>clk_i,
+										Data_ready=>d_ready_t,
+										TXD_o=>TXD_o
+									);
+	
 end Behavioral;
-
