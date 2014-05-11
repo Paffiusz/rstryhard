@@ -32,8 +32,8 @@ END COMPONENT;
 
 --------------------------------------------------
 
-constant clock_freq : integer := 50000000;	--in Hz
-constant rs232_freq : integer := 9600;		--in Hz
+constant clock_freq : integer := 50_000_000;	--in Hz
+constant rs232_freq : integer := 9_600;		--in Hz
 
 signal sync_RxD : STD_LOGIC:= '1';
 signal snf_RxD : STD_LOGIC:= '1';
@@ -60,6 +60,7 @@ BEGIN
 		if rising_edge(clk_i) then
 		
 		-- Obsluga stanu recivera
+			
 			if (unit_state /= Reciving and unit_state /= Waiting) and snf_RxD = '0' then
 				unit_state:= Waiting;
 				counter:= 0;
@@ -74,13 +75,12 @@ BEGIN
 		--Odbieranie wiadomosci
 
 		if unit_state = Waiting then
+			
 			if hcounter = (clock_freq/rs232_freq)/2 then
-<<<<<<< HEAD
 				msg <= snf_RxD & msg(9 downto 1);
 				unit_state:= Reciving;
 				bit_counter:= 1;
 				LOG <= NOT LOG;
-=======
 				if snf_RxD = '0' then
 					msg <= snf_RxD & msg(9 downto 1);
 					unit_state:= Reciving;
@@ -89,7 +89,7 @@ BEGIN
 				else
 					unit_state:= Init;
 				end if;
->>>>>>> codes
+				
 			elsif hcounter /= (clock_freq/rs232_freq)/2 then
 				hcounter:= hcounter +1;
 			end if;
